@@ -30,22 +30,36 @@ function getDaysToLocation(kilometersAway: number): number {
 
 // Move your output statement from part 2 here. Update the template literal to call
 // the function and print the outputs for a Mars trip and a moon trip.
-console.log(`${spacecraftName} would take ${getDaysToLocation(kilometersToTheMoon)} days to get to Mars.`);
+console.log(`${spacecraftName} would take ${getDaysToLocation(kilometersToTheMoon)} days to get to Moon.`);
 
 
 
 // Part 4: Create a Spacecraft Class
-
-
+class Spacecraft {
+    milesPerKilometer: number = 0.621;
+    name: string;
+    speedMph: number;
+ 
+    constructor(name: string, speedMph: number) {
+       this.name = name;
+       this.speedMph = speedMph;
+    };
+ 
+    getDaysToLocation(kilometersAway: number): number {
+       let milesAway: number = kilometersAway * this.milesPerKilometer;
+       let hoursToMars: number = milesAway / this.speedMph;
+       return hoursToMars / 24;
+    };
+ };
 
 
 // Create an instance of the class here:
-
+let spaceShuttle = new Spacecraft('Determination', 17500);
 
 
 // Move your output statements from part 3 here. Update the template literals use the
 // instance of the class.
-
+console.log(`${spaceShuttle.name} would take ${spaceShuttle.getDaysToLocation(kilometersToTheMoon)} days to get to Mars.`);
 
 
 // Part 5: Export and Import the SpaceLocation Class
