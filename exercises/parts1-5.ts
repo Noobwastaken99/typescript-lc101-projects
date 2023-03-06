@@ -8,25 +8,29 @@ let speedMph: number = 17500;
 let kilomitersToMars: number = 225000000;
 let kilometersToTheMoon: number = 384400;
 let milesPerKilometer: number = 0.621;
+
+
+// Part 2: Print Days to Mars
 let milesToMars: number = kilomitersToMars * milesPerKilometer;
 let hoursToMars: number = milesToMars / speedMph;
 let daysToMars: number = hoursToMars / 24;
 
-// Part 2: Print Days to Mars
-console.log(`${spacecraftName} would take ${daysToMars} days to get to Mars.`)
-
 
 // Code an output statement here (use a template literal):
-
+console.log(`${spacecraftName} would take ${daysToMars} days to get to Mars.`);
 
 
 // Part 3: Create a Function ("getDaysToLocation")
-
+function getDaysToLocation(kilometersAway: number): number {
+    let milesAway: number = kilometersAway * milesPerKilometer;
+    let hoursToLocation: number = milesAway / speedMph;
+    return hoursToLocation / 24;
+ };
 
 
 // Move your output statement from part 2 here. Update the template literal to call
 // the function and print the outputs for a Mars trip and a moon trip.
-
+console.log(`${spacecraftName} would take ${getDaysToLocation(kilometersToTheMoon)} days to get to Mars.`);
 
 
 
