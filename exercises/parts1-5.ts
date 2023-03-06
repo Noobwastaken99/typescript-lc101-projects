@@ -67,7 +67,7 @@ let spaceShuttle = new Spacecraft('Determination', 17500);
 //console.log(`${spaceShuttle.name} would take ${spaceShuttle.getDaysToLocation(kilometersToTheMoon)} days to get to Mars.`);
 
 
-// Part 5: Export and Import the SpaceLocation Class
+// Part 5: Export and Import thegit  SpaceLocation Class
 // Add the required import statement BEFORE the part 1 concent.
 
 
